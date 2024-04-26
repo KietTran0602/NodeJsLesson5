@@ -33,26 +33,53 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
     const carouselItems = CarouselRepo.getItem();
     const featureItem = FeatureRepo.getItem();
-    const catagoris = [
+    const catagories = [
       {
-        id:"",
-        name: "",
+        id:"#tab-1",
+        name: "All Products",
         product: [
           {
-          id: "",
-          name: "",
-          image:"",
-          desc:"",
-          price: 0
-          }
-          
+          id: "1",
+          name: "Grapes",
+          image:"img/fruite-item-5.jpg",
+          desc:"Lorem ipsum",
+          price: 4.99
+          },
+          {
+            id: "2",
+            name: "Raspberries",
+            image:"img/fruite-item-2.jpg",
+            desc:"Lorem ipsum",
+            price: 4.99
+            }       
+        ]
+      },
+      {
+        id:"#tab-2",
+        name: "Vegetables",
+        product: [
+          {
+            id: "1",
+            name: "Grapes",
+            image:"img/fruite-item-5.jpg",
+            desc:"Lorem ipsum",
+            price: 4.99
+            },
+            {
+              id: "2",
+              name: "Raspberries",
+              image:"img/fruite-item-2.jpg",
+              desc:"Lorem ipsum",
+              price: 4.99
+              }  
         ]
       }
     ] 
     // console.log(carouselItems);
   res.render("homepage", {
     carouselItems,
-    featureItem
+    featureItem,
+    catagories
   });
 });
 
