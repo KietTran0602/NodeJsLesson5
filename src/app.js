@@ -1,6 +1,7 @@
 import express from "express";
 import { create as createHandlebarsEngine } from "express-handlebars";
 import { CarouselRepo } from "./db/carousel.js";
+import { FeatureRepo } from "./db/feature.js";
 
 const app = express();
 
@@ -31,9 +32,27 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     const carouselItems = CarouselRepo.getItem();
-    console.log(carouselItems);
+    const featureItem = FeatureRepo.getItem();
+    const catagoris = [
+      {
+        id:"",
+        name: "",
+        product: [
+          {
+          id: "",
+          name: "",
+          image:"",
+          desc:"",
+          price: 0
+          }
+          
+        ]
+      }
+    ] 
+    // console.log(carouselItems);
   res.render("homepage", {
-    carouselItems
+    carouselItems,
+    featureItem
   });
 });
 
