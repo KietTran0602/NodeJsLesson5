@@ -1,0 +1,12 @@
+
+<div id="{{catagories.id}}" class="tab-pane fade show p-0 {{#if (eq @index 0)}}active{{/if}}">
+    <div class="row g-4">
+        <div class="col-lg-12">
+            <div class="row g-4">
+                {{#each catagories.product as |_product|}}
+                    {{>organic-product-item product=_product}}
+                {{/each}}     
+            </div>
+        </div>
+    </div>
+</div>
