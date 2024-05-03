@@ -1,0 +1,12 @@
+<div class="container-fluid featurs py-5">
+    <div class="container py-5">
+        <div class="row g-4">
+
+            {{#each featureItems as |featureInEach|}}
+                {{> featureItem item = featureInEach}}
+            {{/each}}
+
+
+        </div>
+    </div>
+</div>

@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
     const featureItem = FeatureRepo.getItem();
     const catagories = [
       {
-        id:"#tab-1",
+        id:"tab-1",
         name: "All Products",
         product: [
           {
@@ -50,12 +50,12 @@ app.get("/", (req, res) => {
             name: "Raspberries",
             image:"img/fruite-item-2.jpg",
             desc:"Lorem ipsum",
-            price: 4.99
+            price: 6.99
             }       
         ]
       },
       {
-        id:"#tab-2",
+        id:"tab-2",
         name: "Vegetables",
         product: [
           {
@@ -63,14 +63,14 @@ app.get("/", (req, res) => {
             name: "Grapes",
             image:"img/fruite-item-5.jpg",
             desc:"Lorem ipsum",
-            price: 4.99
+            price: 10.99
             },
             {
               id: "2",
               name: "Raspberries",
               image:"img/fruite-item-2.jpg",
               desc:"Lorem ipsum",
-              price: 4.99
+              price: 12.99
               }  
         ]
       }
