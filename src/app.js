@@ -2,6 +2,9 @@ import express from "express";
 import { create as createHandlebarsEngine } from "express-handlebars";
 import { CarouselRepo } from "./db/carousel.js";
 import { FeatureRepo } from "./db/feature.js";
+import {readJsonFile} from "../utils/read-json-file.util.js"
+
+// readJsonFile(join(process.cwd(),"./src/db/carousel.json"));
 
 const app = express();
 
