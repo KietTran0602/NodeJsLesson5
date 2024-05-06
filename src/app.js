@@ -3,7 +3,8 @@ import { create as createHandlebarsEngine } from "express-handlebars";
 import { CarouselRepo } from "./db/carousel.js";
 import { FeatureRepo } from "./db/feature.js";
 import {readJsonFile} from "../utils/read-json-file.util.js"
-
+import mongoose from "mongoose";
+import {connectMongoDb} from "../src/db/connection.js";
 // readJsonFile(join(process.cwd(),"./src/db/carousel.json"));
 
 const app = express();
@@ -33,8 +34,11 @@ app.set("views", "views/pages");
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-    const carouselItems = CarouselRepo.getItem();
+connectMongoDb();
+
+app.get("/", async (req, res) => {
+    const carouselItems = await CarouselRepo.getItem();
+    console.log(carouselItems);
     const featureItem = FeatureRepo.getItem();
     const catagories = [
       {
